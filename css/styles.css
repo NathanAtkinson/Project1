@@ -1,0 +1,70 @@
+* {
+	color: #333;
+	font-family:  'Lato';
+	/* why did the reset override the lobster font below in the header selector?!? 
+	only selector?*/
+}
+
+html {
+	/* is there an advantage of using html over body for a selector other than browser default margins? */
+	/* should be body...  or if wanted something to cascade down to descendants could use html as the selector 
+	very few cases you would want stuff done to html.  Mostly related to resets, height issues (talk about later)*/
+	/* background-image: url('/project1/images/background.png'); */
+	background-image: url('/project1/images/nature.png');
+/* 	background image wasn't loading.  checked f12 and found that it was 403 (forbidden).  Checked permissions
+in terminal and found that only user could rw.  Group and other had no access.  chmod 744, no issues. */
+	/* background is steps from subtle backgrounds */
+	/* absolute file path.  The relative filepath w/b ../images/background.png 
+	.. would go to parent folder and then going down from*/
+}
+
+	/* outside in, top to bottom 
+	body, header, etc  Biggest/general things first, then smaller things
+	had header div which is less precise and increased specificity*/
+header {
+	/* background-color: inherit; */
+	/* when didn't have a background-color, header was transparent. */
+	padding: 5px;
+	background-color: rgba(221, 221, 221, .7);
+	/* why is the above different than "padding: 5px"? */
+	/* font-size: 35pt; */
+	/* border-top: 1px solid black; */
+	text-decoration: none;
+}
+
+header h1 {
+	font-family: 'Lobster';	
+}
+	/* should I do header nav in preparation that there will be other navs? */
+nav {
+	padding: 7px;
+	background-color: #333;
+	color: #ddd;
+/* why does removing the above color make the pipes disappear?!? */
+	/* text-decoration: none; */
+	font-weight: 800;
+	font-size: 20pt;
+}
+
+	/* had header a but nav a is definitely superior.  issue would be if other links in header */
+nav a {
+	text-decoration: none;
+	color: #ccc;
+}
+
+main {
+	background-color: rgba(221, 221, 221, .7);
+	border-radius: 10px;
+	padding: 20px;
+	margin: 10px;
+}
+
+footer p {
+	/* background-color: #fff;
+	border-top: 1px solid black;
+	border-bottom: 1px solid #666;
+	padding: 5px; */
+/* had to add p to the footer selector for the color to be overridden.  Is footer != to * in overrides? */
+	color: rgba(221, 221, 221, .8);
+	margin: 5px;
+}
